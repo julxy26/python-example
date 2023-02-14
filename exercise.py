@@ -1,9 +1,16 @@
+# from pprint import pprint
+
+# return evenly divided numbers + count
 count = 0
 for number in range(1, 10):
     if number % 2 == 0:
         count += 1
-        print(number)
-print(f"We have {count} even numbers")
+        # print(number)
+# print(f"We have {count} even numbers")
+
+# if number is divisible by 3 return fizz
+# if number is divisible by 5 return buzz
+# if number is divisible by 3 and 5 return FizzBuzz
 
 
 def fizz_buzz(num):
@@ -16,4 +23,22 @@ def fizz_buzz(num):
     return num
 
 
-print(fizz_buzz(15))
+# print(fizz_buzz(15))
+
+
+# find most repeated character
+sentence = "This is a common interview question."
+
+letter_frequency = {}
+
+for letter in sentence:
+    if letter in letter_frequency:
+        letter_frequency[letter] += 1
+    else:
+        letter_frequency[letter] = 1
+# pprint(letter_frequency, width=1)
+
+
+sorted_list = sorted(letter_frequency.items(),
+                     key=lambda item: item[1], reverse=True)
+print(sorted_list[0])
