@@ -41,15 +41,15 @@ class Point:
 
 
 point = Point(10, 20)
-other = Point(1, 2)
+other_point = Point(1, 2)
 point.z = 3  # define new attribute
 # point.draw()
 # creating a new object with factory method
 point_zero = Point.zero()
 
-print(point + other)  # returns point object with address
+print(point + other_point)  # returns point object with address
 # to show result:
-combined = point + other
+combined = point + other_point
 print(combined.y)
 
 
