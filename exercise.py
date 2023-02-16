@@ -2,7 +2,6 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=missing-function-docstring
 
-
 # from pprint import pprint
 
 # return evenly divided numbers + count
