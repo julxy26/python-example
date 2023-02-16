@@ -91,7 +91,7 @@ class Product:
     def price(self):
         return self.__price
 
-    @price.setter # without setter => read only 
+    @price.setter # without setter => read only
     def price(self, value):
         if value < 0:
             raise ValueError("Value cannot be less than 0.")
@@ -129,7 +129,7 @@ class Fish(Animal):
 dog = Dog()
 fish = Fish()
 dog.eat() # interited method
-print(fish.color) # inherited attribute 
+print(fish.color) # inherited attribute
 
 # object class
 # every class in python is derived from the object class
@@ -175,8 +175,8 @@ class Text(str): # built-in class
         return self + self
 
 class TrackableList(list):
-    def append(self, object): # overwriting append()
-        super().append(object)
+    def append(self, item): # overwriting append()
+        super().append(item)
         print("Append called.")
 
 

@@ -72,7 +72,7 @@ with ZipFile("files.zip") as zip_file:
 
 
 # CSV files => Comma Separated Values
-with open("data.csv", "w") as csv_file:
+with open("data.csv", "w", encoding="utf8") as csv_file:
     writer = csv.writer(csv_file)
     writer.writerow(["transaction_id", "product_id", "product_price"])
     writer.writerow([97, 1, 10])
@@ -80,10 +80,10 @@ with open("data.csv", "w") as csv_file:
     writer.writerow([99, 3, 15])
 
 
-with open("data.csv") as csv_file:
+with open("data.csv", encoding="utf8") as csv_file:
     reader = csv.reader(csv_file)
     # print(list(reader)) # list with listed data
-    for row in reader: 
+    for row in reader:
         print(row) # each row in a separate list
 
 
@@ -94,11 +94,11 @@ movies = [
     {"id": 3, "title": "Princess Mononoke", "rating": 8}
 ]
 
-json_data = json.dumps(movies) # converts dictionary into json 
+json_data = json.dumps(movies) # converts dictionary into json
 
-Path("movies.json").write_text(json_data) # creating json file with data
+Path("movies.json").write_text(json_data, encoding="utf8") # creating json file with data
 
 # when using external data
-path = Path("movies.json").read_text() # creating json file with data
+path = Path("movies.json").read_text(encoding="utf8") # creating json file with data
 movies = json.loads(path) # converts objects to array of dictionaries
 print(movies[1]["title"])

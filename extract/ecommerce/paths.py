@@ -3,7 +3,7 @@
 from pathlib import Path
 from zipfile import ZipFile
 
-""" # absolute path for windows
+# absolute path for windows
 Path(r"C:\\projects\python-example")
 
 # absolute path for mac/linux
@@ -44,24 +44,26 @@ path.absolute()
 # get list of files in directory
 path.iterdir()  # => returns generater object (new value everytime)
 
-# iterates through objects in path and returns only directories in PosixPath(mac) / WindowsPath(windows)
+# iterates through objects in path
+# => returns only directories in PosixPath(mac) / WindowsPath(windows)
 paths = [p for p in path.iterdir() if p.is_dir()]
 # search for patterns and recursively
 py_files = [p for p in path.glob("*.py")]
 # recursively
 py_files = [p for p in path.glob("**/*.py")]
-py_files = [p for p in path.rglob("*.py")] """
+py_files = [p for p in path.rglob("*.py")]
 
 
 with ZipFile("files.zip", "w") as zip_file:
-  for path in Path("ecommerce").rglob("*.*"): # find all files in current directory and its children
-       zip_file.write(path)
+    # find all files in current directory and its children
+    for path in Path("ecommerce").rglob("*.*"):
+        zip_file.write(path)
 
-        
-""" with ZipFile("files.zip") as zip_file:
-    for path in Path("ecommerce").rglob("*.*"): # find all files in current directory and its children
+
+with ZipFile("files.zip") as zip_file:
+    for path in Path("ecommerce").rglob("*.*"):
         print(zip_file.namelist())
         info = zip_file.getinfo("ecommerce/__init__.py")
         print(info.file_size)
         print(info.compress_size)
-        zip_file.extractall() """
+        zip_file.extractall()
