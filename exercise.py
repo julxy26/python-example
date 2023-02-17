@@ -1,7 +1,4 @@
-# pylint: disable=missing-module-docstring
-# pylint: disable=missing-class-docstring
-# pylint: disable=missing-function-docstring
-
+""" print with a certain width """
 # from pprint import pprint
 
 # return evenly divided numbers + count
@@ -12,12 +9,19 @@ for number in range(1, 10):
         # print(number)
 # print(f"We have {count} even numbers")
 
-# if number is divisible by 3 return fizz
-# if number is divisible by 5 return buzz
-# if number is divisible by 3 and 5 return FizzBuzz
-
 
 def fizz_buzz(num):
+    """ fizz_buzz exercise
+
+    if number is divisible by 3 return fizz
+
+    if number is divisible by 5 return buzz
+
+    if number is divisible by 3 and 5 return FizzBuzz
+
+    Parameters:
+    number (int): A number for the calculations.
+    """
     if (num % 3 == 0) and (num % 5 == 0):
         return "FizzBuzz"
     if num % 3 == 0:
